@@ -44,13 +44,13 @@
          <input type="search" placeholder="Search">
        </label>
      </div>
-     <ion-content class="has-subheader">
+     <ion-content ng-controller='ListController' class="has-subheader">
        <ion-list>
-         <ion-item class="item-thumbnail-left item-text-wrap">
-           <img src="http://placehold.it/100x100" alt="Cat">
-           <h2>Name</h2>
-           <h3>Reknown</h3>
-           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+         <ion-item ng-repeat='item in artists' class="item-thumbnail-left item-text-wrap">
+           <img src="img/{{item.shortname}}_tn.jpg" alt="{{item.name}} photo">
+           <h2>{{ item.name }}</h2>
+           <h3>{{ item.reknown }}</h3>
+           <p>{{ item.bio }}</p>
          </ion-item>
        </ion-list>
      </ion-content>
